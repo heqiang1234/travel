@@ -76,7 +76,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.15</version>
+            <version>1.2.25</version>
         </dependency>
         <!-- 数据库部分jar end-->
         <!-- lombok -->
