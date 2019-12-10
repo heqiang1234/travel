@@ -1,65 +1,64 @@
 package com.hq.travel.entity;
 
-import lombok.Data;
-
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 
-@Data
-public class User implements Serializable {
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author hq
+ * @since 2019-12-06
+ */
+//@TableName("travel_user")
+public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer user_id;
+    //@TableId(value = "user_id", type = IdType.AUTO)
+    private Integer userId;
 
-    private String  user_name;
+    private String userName;
 
-    private String  user_password;
+    private String userPassword;
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+    public String getUserName() {
+        return userName;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
-    public String getUser_password() {
-        return user_password;
-    }
-
-    public void setUser_password(String user_password) {
-        this.user_password = user_password;
-    }
-
-    public User() {
-    }
-
-    public User(String user_name, String user_password) {
-
-        this.user_name = user_name;
-        this.user_password = user_password;
-    }
-
-    public User(Integer user_id, String user_name, String user_password) {
-        this.user_id = user_id;
-        this.user_name = user_name;
-        this.user_password = user_password;
+    @Override
+    protected Serializable pkVal() {
+        return this.userId;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "user_id='" + user_id + '\'' +
-                ", user_name='" + user_name + '\'' +
-                ", user_password='" + user_password + '\'' +
-                '}';
+            "userId=" + userId +
+            ", userName=" + userName +
+            ", userPassword=" + userPassword +
+        "}";
     }
 }

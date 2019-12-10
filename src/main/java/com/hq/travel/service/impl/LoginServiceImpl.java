@@ -14,8 +14,8 @@ public class LoginServiceImpl implements LoginService {
     public List<User> getUser() {
         List<User> list=new ArrayList<>();
         User u=new User();
-        u.setUser_name("何强");
-        u.setUser_password("123456");
+      //  u.setUser_name("何强");
+       // u.setUser_password("123456");
         list.add(u);
         return list;
     }

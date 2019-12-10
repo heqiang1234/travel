@@ -1,12 +1,12 @@
 package com.hq.travel.controller;
 
 
-import com.hq.travel.entity.User;
-import com.hq.travel.service.UserService;
+import com.hq.travel.entity.Test;
+import com.hq.travel.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -21,18 +21,16 @@ import java.util.List;
  * @since 2019-12-06
  */
 @RestController
-@RequestMapping("/travel/user")
-public class UserController {
+@RequestMapping("/travel/test")
+public class TestController {
 
     @Autowired
     @Resource
-    private UserService userService;
+    private TestService testService;
 
-
-    @RequestMapping("/getUser")
-    @ResponseBody
-    public List<User> getUser()
+    @RequestMapping("/getTest")
+    public List<Test> getTest()
     {
-        return userService.getUserByList();
+        return testService.list();
     }
 }
