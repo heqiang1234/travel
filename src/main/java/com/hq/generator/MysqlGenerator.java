@@ -126,6 +126,10 @@ public class MysqlGenerator extends GeneratorTest {
                 .setModuleName("travel")
                 .setParent("com.hq")// 自定义包路径
                 .setController("controller")// 这里是控制器包名，默认 web
+                .setEntity("Entity")
+                .setMapper("Dao")
+                .setService("Service")
+                .setServiceImpl("Service.impl")
         ).setCfg(
             // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值
             new InjectionConfig() {

@@ -2,6 +2,8 @@ package com.hq.travel.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -12,6 +14,7 @@ import java.io.Serializable;
  * @author hq
  * @since 2019-12-06
  */
+@Data
 @TableName("travel_test")
 public class Test extends Model<Test> {
 

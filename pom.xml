@@ -140,6 +140,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -149,19 +153,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-<!--        <resources>-->
-<!--&lt;!&ndash;            <resource>&ndash;&gt;-->
-<!--&lt;!&ndash;                <directory>src/main/java</directory>&ndash;&gt;-->
-<!--&lt;!&ndash;                <includes>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include>xxx/*.xml</include>&ndash;&gt;-->
-<!--&lt;!&ndash;                </includes>&ndash;&gt;-->
-<!--&lt;!&ndash;            </resource>&ndash;&gt;-->
-<!--            <resource>-->
-<!--                <directory>src/main/resources</directory>-->
-<!--                <filtering>true</filtering>-->
-<!--            </resource>-->
-<!--        </resources>-->
-
     </build>
 
 </project>

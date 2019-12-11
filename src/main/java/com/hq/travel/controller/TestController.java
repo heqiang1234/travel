@@ -29,8 +29,8 @@ public class TestController {
     private TestService testService;
 
     @RequestMapping("/getTest")
-    public List<Test> getTest()
+    public List<Test> getTest2()
     {
-        return testService.list();
+        return testService.getTest();
     }
 }
