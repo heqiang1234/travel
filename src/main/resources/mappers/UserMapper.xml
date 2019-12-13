@@ -1,13 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hq.travel.dao.UserDao">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.travel.entity.User">
     <resultMap id="BaseResultMap" type="com.hq.travel.entity.User">
-        <id column="user_id" property="userId" jdbcType="INTEGER"/>
-        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
-        <result column="user_password" property="userPassword" jdbcType="VARCHAR"/>
+        <id column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_nickname" property="userNickname"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="user_email" property="userEmail"/>
+        <result column="user_avatar" property="userAvatar"/>
+        <result column="user_status" property="userStatus"/>
+        <result column="user_created_time" property="userCreatedTime"/>
+        <result column="user_updated_time" property="userUpdatedTime"/>
     </resultMap>
-<!--    <parameterMap id="" type=""/>-->
-    <select id="getUser" resultMap="BaseResultMap">
-     select *  from  travel_user
+
+    <sql id="all_columns">
+        id, username, nickname, password, email, avatar, status,
+        created_time, created_by, updated_time, updated_by
+    </sql>
+
+    <sql id="tb">`user`</sql>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="all_columns"/>
+        FROM
+        <include refid="tb"/>
     </select>
+
+    <select id="findByUsername" resultMap="BaseResultMap">
+        SELECT
+        <include refid="all_columns"/>
+        FROM
+        <include refid="tb"/>
+        WHERE username = #{value}
+    </select>
+
 </mapper>

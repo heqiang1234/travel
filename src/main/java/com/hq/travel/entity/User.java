@@ -1,64 +1,74 @@
 package com.hq.travel.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
- * <p>
- * 
- * </p>
+ * <pre>
+ *     用户信息(MyBatisPlus)
+ * </pre>
  *
- * @author hq
- * @since 2019-12-06
+ * @author : saysky
+ * @date : 2017/11/14
  */
-//@TableName("travel_user")
-public class User extends Model<User> {
+@Data
+@TableName("user")
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    //@TableId(value = "user_id", type = IdType.AUTO)
-    private Integer userId;
+    /**
+     * 编号，自增
+     */
+    @TableId(type = IdType.AUTO)
+    private Long userId;
 
+    /**
+     * 用户名
+     */
+    @NotBlank(message = "用户名不能为空")
     private String userName;
 
+    /**
+     * 显示名称
+     */
+    private String userNickname;
+
+    /**
+     * 密码
+     */
     private String userPassword;
 
-    public Integer getUserId() {
-        return userId;
-    }
+    /**
+     * 邮箱
+     */
+    private String userEmail;
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-    public String getUserName() {
-        return userName;
-    }
+    /**
+     * 头像
+     */
+    private String userAvatar;
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-    public String getUserPassword() {
-        return userPassword;
-    }
+    /**
+     * 0 正常
+     * 1 禁用
+     * 2 已删除
+     */
+    private Integer userStatus = 0;
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
+    /**
+     * 创建时间
+     */
+    private Date userCreatedTime;
+    /**
+     * 更新时间
+     */
+    private Date userUpdatedTime;
 
-    @Override
-    protected Serializable pkVal() {
-        return this.userId;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-            "userId=" + userId +
-            ", userName=" + userName +
-            ", userPassword=" + userPassword +
-        "}";
-    }
 }

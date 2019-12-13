@@ -12,7 +12,29 @@
     <artifactId>travel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>travel</name>
-    <description>Demo project for Spring Boot</description>
+
+    <description>
+        # travel
+        基于爬虫的旅游线路分析规划系统
+
+        实现
+        基于springboot
+        redis实现登录持久化
+        shiro权限管理
+        mybatis-plus访问数据库
+
+    </description>
+
+    <developers>
+        <developer>
+            <id>heqiang1234</id>
+            <name>何强</name>
+            <email>1401651730@qq.com</email>
+            <url></url>
+        </developer>
+    </developers>
+
+
 
     <properties>
         <java.version>1.8</java.version>
@@ -143,6 +165,24 @@
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>27.0.1-jre</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
 
